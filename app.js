@@ -59,13 +59,13 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
     var sum2 = sum (a,b);
-    console.log(sum2);
+    // console.log(sum2);
     var sum1 = sum (sum2[0],c );
-    console.log(sum1);
+    // console.log(sum1);
     var mul2 = multiply(a,b);
-    console.log(mul2);
+    // console.log(mul2);
     var mul1 = multiply(mul2[0],c );
-    console.log(mul1);
+    // console.log(mul1);
     var message1 = `${a} and ${b} and ${c} sum to ${sum1[0]}.`;
     var message2 = `The product of ${a} and ${b} and ${c} is ${mul1[0]}.`;
     return[sum1[0],mul1[0],message1,message2];
@@ -91,9 +91,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+function sumArray(testArray) { //eslint-disable-line
+    var sum1 = sum(testArray[0],testArray[1]);
+    var sum2 = sum ( sum1[0],testArray[2]); 
+    var message3 =`${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sum2[0]} is their sum.`;
+    return [sum2[0],message3];
 
 }
+testSumArray();
 
 // Here is the test for sumArray(); uncomment it to run it
 
