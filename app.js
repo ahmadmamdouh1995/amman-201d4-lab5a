@@ -152,8 +152,21 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    var counter =1;
+    for (var i=0 ; i<testDynamicArray.length ; i++){
+        counter = multiply(counter,testDynamicArray[i])[0];
+    }
 
+    var message1 = `The numbers `;
+    for (var j=0 ;j<testDynamicArray.length;j++){
+        message1 = message1 +`${testDynamicArray[j]},`;
+
+    }
+    message1 = message1.substring(0, message1.length - 1);
+    message1 = message1+` have a product of ${counter}.`;
+       return[counter ,message1];
 }
+testMultiplyAnyArray();
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
